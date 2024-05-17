@@ -48,13 +48,14 @@ Após o cadastro o programa deve criar um arquivo ".txt", e salvar essas 4 respo
 
 ##### Passo 4
 
-Agora, você deverá criar um “menu principal” com as seguintes duas opções:
+Criação do “menu principal” com as seguintes duas opções:
 
 1 - Cadastrar o usuário
 2 - Listar todos usuários cadastrados
 3 - Cadastrar nova pergunta no formulário
 4 - Deletar pergunta do formulário
 5 - Pesquisar usuário por nome ou idade ou email
+6 - Sair
 
 Neste caso, você o usuário vai poder escolher entre a opção 1 e 5, como a 1 já foi desenvolvida, na 2, ele deverá pegar todas as pessoas cadastradas e listar SOMENTE O NOME DE TODAS ELAS, como no exemplo a seguir que o usuário selecione a opção 2:
 

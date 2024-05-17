@@ -22,14 +22,29 @@ public class SistemaCadastro {
             String line;
             int count = 1;
             while ((line= bufferedReader.readLine()) != null) {
+                System.out.println(line);
                 switch (count){
                     case 1:
-                        person.
+                        String fullName = scanner.nextLine();
+                        person.setFullName(fullName);
+                        break;
+                    case 2:
+                        String email = scanner.next();
+                        person.setEmail(email);
+                        break;
+                    case 3:
+                        int age = scanner.nextInt();
+                        person.setAge(age);
+                        break;
+                    case 4:
+                        //TODO: fazer um tratamento de erros aqui pois o Scanner só aceita valores decimais com vírgula. Ex 1,65
+                        double height = scanner.nextDouble();
+                        person.setHeight(height);
+                        break;
                 }
-
-                System.out.println(line);
-
+                count++;
             }
+            System.out.println(person.toString());
 
         } catch (IOException e){
             e.printStackTrace();

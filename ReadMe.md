@@ -35,20 +35,16 @@ Não é permitido escrever as perguntas no seu código e printa-las na tela, o p
 
 ##### Passo 2
 
-Agora, você irá cadastrar um usuário e vai ter de RESPONDER essas 4 perguntas, e, após respondê-las, você deverá imprimir a resposta no terminal, algo como:
+Cadastro de um primeiro usuário utilizando o Paradigma de Orientação a Objetos respondendo às 4 perguntas, e, após respondê-las, você deverá imprimindo as respostas no terminal, seguindo o padrão:
 
-Lucas Carrilho
-lucascarrilho123@gmail.com
-28
-1.77
-
-Neste ponto, recomendo que você pense no Paradigma de OO, pois será legal se você armazenar essas informações em um objeto.
+"Nome Completo: Stephanie Carvalho
+Email: stephaniecarvalho@gmail.com
+Idade: 28
+Altura: 1.77"
 
 ##### Passo 3
 
-Você deverá agora, SALVAR em um arquivo .txt, essas 4 respostas dadas no passo anterior a respeito do usuário em um arquivo txt com o seguinte formato: 1-LUCASCARRILHO.TXT.
-
-Você deverá CONCATENAR o nome que a pessoa responder na primeira pergunta e salvá-lo com letras maiúsculas e na seguinte ordem, 1,2,3,4 e assim sucessivamente.
+Após o cadastro o programa deve criar um arquivo ".txt", e salvar essas 4 respostas dadas no passo anterior. A nomenclatura do arquivo deve seguir o seguinte formato: 1-LUCASCARRILHO.TXT.(O nome da pessoa CONCATENAdo e <MAIÚSCULO), na seguinte ordem, 1,2,3,4 e assim sucessivamente.
 
 ##### Passo 4
 

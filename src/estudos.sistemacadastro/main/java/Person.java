@@ -8,27 +8,12 @@ public class Person {
     private int age;
     private double height;
 
-    public Person() {
-
-        //TODO: queria criar o arquivo logo assim que fosse criado o objeto, verificar melhor forma de fazer isso
-        try {
-            File file = new File(count + " - " + this.fullName);
-            file.createNewFile();
-            count++;
-
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-    }
-
     @Override
     public String toString() {
-        return "Person{" +
-                "fullName='" + fullName + '\'' +
-                ", email='" + email + '\'' +
-                ", age=" + age +
-                ", height=" + height +
-                '}';
+        return "Nome Completo: " + fullName + System.lineSeparator() +
+                "Email: " + email + System.lineSeparator() +
+                "Idade: " + age + System.lineSeparator() +
+                "Altura: " + height;
     }
 
     public String getFullName() {

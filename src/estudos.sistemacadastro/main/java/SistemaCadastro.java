@@ -6,17 +6,7 @@ public class SistemaCadastro {
         Scanner scanner = new Scanner(System.in);
         File file = new File("formulario.txt");
         Person person = new Person();
-
-        /* Estrutura para escrever no arquivo
-        try (FileWriter fileWriter = new FileWriter(file, true); BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)){
-            bufferedWriter.write("Qual o seu nome completo?");
-
-            fileWriter.flush();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        */
+        int i = 0;
 
         try (FileReader fileReader = new FileReader(file); BufferedReader bufferedReader = new BufferedReader(fileReader)){
             String line;
@@ -49,6 +39,19 @@ public class SistemaCadastro {
         } catch (IOException e){
             e.printStackTrace();
         }
+        File personFile = new File((i+1)+ " - "+ person.getFullName().replaceAll("\\s","").toUpperCase() +".txt");
+        try {
+            personFile.createNewFile();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        try (FileWriter fileWriter = new FileWriter(personFile, true); BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)){
+            bufferedWriter.write(person.toString());
 
+            fileWriter.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -1,8 +1,6 @@
 import java.io.File;
 
 public class Person {
-    private static int count = 1;
-
     private String fullName;
     private String email;
     private int age;

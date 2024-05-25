@@ -57,18 +57,20 @@ Criação do “menu principal” com as seguintes duas opções:
 5 - Pesquisar usuário por nome ou idade ou email
 6 - Sair
 
-Neste caso, você o usuário vai poder escolher entre a opção 1 e 5, como a 1 já foi desenvolvida, na 2, ele deverá pegar todas as pessoas cadastradas e listar SOMENTE O NOME DE TODAS ELAS, como no exemplo a seguir que o usuário selecione a opção 2:
+A opção 1 já foi senvolvida.
+Na opção 2, o sistema deve listar SOMENTE O NOME DE TODAS as pessoas que já fora cadastradas, como no exemplo a seguir:
 
 1 - Lucas Carrilho
 2 - Joao Pe de Feijao
 
 ##### Passo 5
 
-Você agora, vai criar a função de adicionar nova pergunta ao formulário e deletar pergunta cadastrada, uma regra aqui -> Não será POSSÍVEL apagar as 4 primeiras perguntas, apenas da 5 em diante.
+Criação das opções 3 e 4 com a função de adicionar nova pergunta ao formulário ou deletar pergunta cadastrada.
+Regra: Não será POSSÍVEL apagar as 4 primeiras perguntas, apenas da 5 em diante.
 
 ##### Passo 6
 
-Agora, você deverá implementar outra função que BUSCA por todos os usuários cadastrados na aplicação, seja por parte do nome ou o termo inteiro, exemplo:
+Implementação da opção 5 outra função que BUSCA por todos os usuários cadastrados na aplicação, seja por parte do nome ou o termo inteiro, exemplo:
 
 Cadastrados : Lucas Almeida, Luca De Sá, Luc Montavão.
 

@@ -5,9 +5,9 @@ public class SistemaCadastro {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         File file = new File("formulario.txt");
-        Person[] person = new Person[5];
+        Person person = new Person();
         int options;
-
+        int i = 0;
         do{
             System.out.println("Sistema de cadastros");
             System.out.println("Digite a opção desejada:");
@@ -19,10 +19,11 @@ public class SistemaCadastro {
             System.out.println("6 - Sair");
 
             options = input.nextInt();
+            input.nextLine();
 
             switch (options){
                 case 1:
-                    int i = 0;
+
                     try (FileReader fileReader = new FileReader(file); BufferedReader bufferedReader = new BufferedReader(fileReader)){
                         String line;
                         int count = 1;
@@ -31,37 +32,37 @@ public class SistemaCadastro {
                             switch (count){
                                 case 1:
                                     String fullName = input.nextLine();
-                                    person[i].setFullName(fullName);
+                                    person.setFullName(fullName);
                                     break;
                                 case 2:
                                     String email = input.next();
-                                    person[i].setEmail(email);
+                                    person.setEmail(email);
                                     break;
                                 case 3:
                                     int age = input.nextInt();
-                                    person[i].setAge(age);
+                                    person.setAge(age);
                                     break;
                                 case 4:
                                     //TODO: fazer um tratamento de erros aqui pois o Scanner só aceita valores decimais com vírgula. Ex 1,65
                                     double height = input.nextDouble();
-                                    person[i].setHeight(height);
+                                    person.setHeight(height);
                                     break;
                             }
                             count++;
                         }
-                        System.out.println(person[i].toString());
+                        System.out.println(person.toString());
 
                     } catch (IOException e){
                         e.printStackTrace();
                     }
-                    File personFile = new File(+(i + 1)+ " - "+ person[i].getFullName().replaceAll("\\s","").toUpperCase() +".txt");
+                    File personFile = new File("C:\\Users\\ste_a\\OneDrive\\Documentos\\Java-workspace\\SistemaCadastro\\Cadastros",(i + 1)+ " - "+ person.getFullName().replaceAll("\\s","").toUpperCase() +".txt");
                     try {
                         personFile.createNewFile();
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
                     try (FileWriter fileWriter = new FileWriter(personFile, true); BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)){
-                        bufferedWriter.write(person[i].toString());
+                        bufferedWriter.write(person.toString());
 
                         fileWriter.flush();
 
@@ -72,6 +73,22 @@ public class SistemaCadastro {
                     break;
 
                 case 2:
+                    File directory = new File("C:\\Users\\ste_a\\OneDrive\\Documentos\\Java-workspace\\SistemaCadastro\\Cadastros\\");
+                    File[] files = directory.listFiles((d, name)-> name.endsWith(".txt"));
+
+                    if (files != null){
+                        int j = 0;
+                        for (File f : files) {
+                            try (FileReader fr = new FileReader(files[j]); BufferedReader br = new BufferedReader(fr)) {
+                                String line = br.readLine();
+                                System.out.println((j + 1) + " - " + line);
+
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
+                            j++;
+                        }
+                    }
 
                     break;
 
@@ -96,7 +113,7 @@ public class SistemaCadastro {
                     break;
             }
 
-
+        //TODO: Colocar um press enter para continuar antes do proximo loop
         }while (options !=6);
 
     }
